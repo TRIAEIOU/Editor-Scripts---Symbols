@@ -3,9 +3,7 @@ Anki addon (https://ankiweb.net/shared/info/2065559429) to run custom scripts an
 
 Configure symbols/strings, JavaScript or Python snippets to be inserted/executed in the editor from keyboard shortcuts (Qt format, see https://doc.qt.io/qt-5/qkeysequence.html).
 
-<img src="https://aws1.discourse-cdn.com/standard11/uploads/anki2/original/2X/e/e0a25dd14a1fc50f0f868ff38698913a42a71b99.png" height="200">
-<img src="https://aws1.discourse-cdn.com/standard11/uploads/anki2/original/2X/b/b1cd176578f2ea2549c111e525e7a39719c58c18.png" height="250">
-<img src="https://aws1.discourse-cdn.com/standard11/uploads/anki2/original/2X/1/18a683d2c9fa656bce473a884611b2550e93bed4.png" height="300">
+<img src="https://github.com/TRIAEIOU/Editor-Scripts-Symbols/blob/main/Screenshots/overview.png" height="600">
 
 ## General configuration
 Addon configuration of scripts and symbols to run/insert is made in the addon configuration. To speed up and facilitate editing of configured scripts and symbols a CodeMirror 6 editor with JSON syntax highlighting is available from the context menu from the editor fields. Alternatively you can use the built in Anki addon configuration editor available from the Tools → Addons → Configure addon menu. The ESS editor has the following key board shortcuts
