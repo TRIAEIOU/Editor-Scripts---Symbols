@@ -1,0 +1,127 @@
+{
+	"Settings": {
+		"Popup shortcut": "Ctrl+Alt+j",
+		"Size mode": "last",
+		"CSS": ""
+	},
+	"Scripts & Symbols": [
+		{
+			"1. Menu": "Symbols",
+			"2. Shortcut": "Shift+Alt+S",
+			"3. Items": [
+				{
+					"1. Menu": "Arrows",
+					"2. Shortcut": "Shift+Alt+A",
+					"3. Items": [
+						{
+							"1. Symbol": "←",
+							"2. Shortcut": "Alt+Left",
+							"3. HTML": "false"
+						},
+						{
+							"1. Symbol": "→",
+							"2. Shortcut": "Alt+Right",
+							"3. HTML": "false"
+						},
+						{
+							"1. Symbol": "↑",
+							"2. Shortcut": "Alt+Up",
+							"3. HTML": "false"
+						},
+						{
+							"1. Symbol": "↓",
+							"2. Shortcut": "Alt+Down",
+							"3. HTML": "false"
+						},
+						{
+							"1. Symbol": "⇐",
+							"2. Shortcut": "Alt+Shift+Left",
+							"3. HTML": "false"
+						},
+						{
+							"1. Symbol": "⇒",
+							"2. Shortcut": "Alt+Shift+Right",
+							"3. HTML": "false"
+						},
+						{
+							"1. Symbol": "↔",
+							"2. Shortcut": "Alt+Shift+Ctrl+Up",
+							"3. HTML": "false"
+						},
+						{
+							"1. Symbol": "⤙",
+							"2. Shortcut": "Alt+Shift+Up",
+							"3. HTML": "false"
+						},
+						{
+							"1. Symbol": "⊣",
+							"2. Shortcut": "Alt+Shift+Down",
+							"3. HTML": "false"
+						}
+					]
+				},
+				{
+					"1. Symbol": "α",
+					"2. Shortcut": "Alt+a",
+					"3. HTML": "false"
+				},
+				{
+					"1. Symbol": "β",
+					"2. Shortcut": "Alt+b",
+					"3. HTML": "false"
+				},
+				{
+					"1. Symbol": "γ",
+					"2. Shortcut": "Alt+c",
+					"3. HTML": "false"
+				},
+				{
+					"1. Symbol": "δ",
+					"2. Shortcut": "Alt+d",
+					"3. HTML": "false"
+				},
+				{
+					"1. Symbol": "Δ",
+					"2. Shortcut": "Alt+Shift+D",
+					"3. HTML": "false"
+				},
+				{
+					"1. Symbol": "ε",
+					"2. Shortcut": "Alt+e",
+					"3. HTML": "false"
+				},
+				{
+					"1. Symbol": "♀",
+					"2. Shortcut": "Alt+f",
+					"3. HTML": "false"
+				},
+				{
+					"1. Symbol": "λ",
+					"2. Shortcut": "Alt+l",
+					"3. HTML": "false"
+				},
+				{
+					"1. Symbol": "♂",
+					"2. Shortcut": "Alt+m",
+					"3. HTML": "false"
+				}
+			]
+		},
+		{
+			"1. Script": "Lowercase",
+			"2. Shortcut": "Shift+Alt+L",
+			"3. Language": "JS",
+			"4. Pre": "(function(){const sel = document.activeElement.shadowRoot.getSelection(); for (i = 0; i < sel.rangeCount; i++) { const rng = sel.getRangeAt(i); let input = new XMLSerializer().serializeToString(rng.extractContents()); input = input.toLowerCase(); rng.insertNode(rng.createContextualFragment(input)); sel.addRange(rng);}})();",
+			"5. File": "",
+			"6. Post": ""
+		},
+		{
+			"1. Script": "Uppercase",
+			"2. Shortcut": "Shift+Alt+U",
+			"3. Language": "JS",
+			"4. Pre": "(function(){const sel = document.activeElement.shadowRoot.getSelection(); for (i = 0; i < sel.rangeCount; i++) { const rng = sel.getRangeAt(i); let input = new XMLSerializer().serializeToString(rng.extractContents()); input = input.toUpperCase(); rng.insertNode(rng.createContextualFragment(input)); sel.addRange(rng);}})();",
+			"5. File": "",
+			"6. Post": ""
+		}
+	]
+}
