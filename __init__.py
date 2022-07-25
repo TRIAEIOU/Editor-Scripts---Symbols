@@ -2,7 +2,7 @@ import sys, os, codecs, importlib, json, base64, shutil, datetime
 from typing import cast
 from aqt import mw, gui_hooks
 from aqt.utils import *
-from aqt.qt import QMenu, QKeySequence, QApplication, QClipboard, QPoint
+from aqt.qt import QMenu, QKeySequence, QApplication, QClipboard, QPoint, QAction, Qt
 
 if qtmajor == 6:
     from . import dialog_qt6 as dialog
@@ -286,12 +286,15 @@ def build_shortcuts(nodes, editor):
 
 ###########################################################################
 # Recursively take config dict - parse - return QMenu
-def build_menu(nodes, menu, editor) -> QMenu:
+def build_menu(nodes, menu: QMenu, editor) -> QMenu:
     for node in nodes:
         if ITEMS in node:
             menu.addMenu(build_menu(node[ITEMS], QMenu(editor.web), editor)).setText(node[MENU])
         elif label := node[SYMBOL] if node.get(SYMBOL, 0) else node.get(SCRIPT, 0):
-            menu.addAction(label, node.get(SHORTCUT, 0), lambda editor=editor, cmd=build_cmd(node): cmd(editor))
+            if qtmajor > 5:
+                menu.addAction(label, node.get(SHORTCUT, 0), lambda editor=editor, cmd=build_cmd(node): cmd(editor))
+            else:
+                menu.addAction(label, lambda editor=editor, cmd=build_cmd(node): cmd(editor), node.get(SHORTCUT, 0))
     return menu
 
 
@@ -311,10 +314,10 @@ def register_shortcuts(scuts, editor):
 def mouse_context(wedit, menu):
     menu.addSeparator()
     menu = build_menu(config.get(ENTRIES, []), menu, wedit.editor)
-    action = QAction(f'ESS config', menu)
-    action.setShortcut(config.get(SETTINGS, {}).get(EDITOR_SHORTCUT, 0))
-    action.triggered.connect(lambda: ESS_dialog(config, wedit.editor.parentWindow, save))
-    menu.addAction(action)
+    if qtmajor > 5:
+        menu.addAction(f'ESS config', config.get(SETTINGS, {}).get(EDITOR_SHORTCUT, 0), lambda: ESS_dialog(config, wedit.editor.parentWindow, save))
+    else:
+        menu.addAction(f'ESS config', lambda: ESS_dialog(config, wedit.editor.parentWindow, save), config.get(SETTINGS, {}).get(EDITOR_SHORTCUT, 0))
     menu.addSeparator()
     return menu
 
